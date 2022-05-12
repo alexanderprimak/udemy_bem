@@ -1,0 +1,36 @@
+@media (max-width: 991px) {
+	.carousel {
+	padding: 42px 0px;
+	&__wrapper {
+		width: 700px;
+		margin: 0px auto;
+		position: relative;
+	}
+	&__slide {
+		img {
+			max-width: 73%;
+			display:block;
+			margin:0px auto;
+		}
+	}
+	&__arrow-left,
+	&__arrow-right {
+		border: none;
+		background: none;
+		position: absolute;
+		transform: translateY(-50%);
+		&:hover {
+			cursor: pointer;
+		}
+	}
+	&__arrow-left {
+		top: 50%;
+		left: 20px;
+	}
+	&__arrow-right {
+		top: 50%;
+		right: 20px;
+	}
+}
+
+}

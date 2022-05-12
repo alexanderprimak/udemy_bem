@@ -1,0 +1,13 @@
+@media (max-width: 767px) {
+.carousel {
+    padding: 42px 47px;
+	&__slide {
+		img {max-width: 55%;}
+	}
+	&__arrow-left,
+	
+	&__arrow-left {left:80px;}
+	&__arrow-right {right: 136px;}
+}
+
+}

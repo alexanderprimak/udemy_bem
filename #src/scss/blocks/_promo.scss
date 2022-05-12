@@ -1,0 +1,67 @@
+@import '../bace/variables';
+
+.promo {
+	background: url('../../img/promo/bg.png') no-repeat center top/cover;
+	min-height: 650px;
+	padding: 21px 0px 93px 0px;
+
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		margin-top: 91px;
+	}
+	&__header {
+		font-weight: 700;
+		font-size: 42px;
+		text-transform: uppercase;
+		color: $main_color;
+		margin-bottom: 0px;
+	}
+	&__subheader {
+		font-weight: 500;
+		font-size: 24px;
+		text-transform: uppercase;
+		color: $main_color;
+		margin-top: 14px;
+		margin-bottom: 0px;
+	}
+
+	&__icons {
+		display: flex;
+		width: 424px;
+		justify-content: space-between;
+		margin-top: 60px;
+	}
+	&__icon {
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		span {
+			margin-top: 16px;
+			font-weight: 500;
+			font-size: 14px;
+			color: $main_color;
+			max-width: 108px;
+			
+		}
+	}
+	&__button {
+		width: 300px;
+		height: 50px;
+		font-size: 16px;
+		margin-top: 67px;
+	}
+	&__link {
+		margin-top: 16px;
+		font-weight: 500;
+		font-size: 16px;
+		a {
+			color: $main_color;
+		}
+	}
+}
+
+@import "../media/promo/_promoMedia"

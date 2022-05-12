@@ -1,0 +1,47 @@
+@media (max-width: 767px) {
+	.reviews {
+		&__title {
+			font-size: 27px;
+		}
+		&__row {
+			margin-top: 0px;
+		}
+		&__wrapper {
+			display: flex;
+			margin-top: 39px;
+			flex-wrap: wrap;
+			row-gap: 38px;
+		}
+	}
+	.reviews-item {
+		&__img {
+			img {
+				max-width:100%;
+			}
+		}
+		&__wrapper {
+			max-width: 417px;
+			margin-left:20px;
+		}
+
+		&__name {
+			font-size: 16px;
+			margin-top: 10px;
+		}
+
+		&__achievement {
+			margin-top: 5px;
+			font-size: 12px;
+		}
+
+		&__desc {
+			font-size: 13px;
+			line-height: 24px;
+
+
+			br + br {
+				display: none;
+			}
+		}
+	}
+}

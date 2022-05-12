@@ -1,0 +1,31 @@
+@media (max-width: 991px) {
+	
+.advantage {
+	padding:37px  31px;
+	&__header {
+		font-size: 28px;
+	}
+    &__wrapper {
+		display:flex;
+		justify-content: space-between;
+		margin-top:60px;
+	}
+	&__item {
+		 max-width:227px;
+	}
+	&__desc {
+		margin-top:12px;
+		p {
+            font-size: 11px;
+            line-height: 16px;
+		}
+		span {
+            font-size: 15px;
+		}
+		a {
+            font-size: 11px;
+		}
+	}
+}
+
+}

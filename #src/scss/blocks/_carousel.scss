@@ -1,0 +1,33 @@
+.carousel {
+	padding: 81px 0px;
+	&__wrapper {
+		width: 750px;
+		margin: 0px auto;
+		position: relative;
+	}
+	&__slide {
+		img {
+			max-width: 100%;
+		}
+	}
+	&__arrow-left,
+	&__arrow-right {
+		border: none;
+		background: none;
+		position: absolute;
+		transform: translateY(-50%);
+		&:hover {
+			cursor: pointer;
+		}
+	}
+	&__arrow-left {
+		top: 50%;
+		left: -65px;
+	}
+	&__arrow-right {
+		top: 50%;
+		right: -65px;
+	}
+}
+
+@import "../media/carousel/_carouselMedia"

@@ -1,0 +1,29 @@
+@media (max-width: 991px) {
+	.reviews {
+		padding:0px 32px;
+		padding-bottom:40px;
+		&__title {
+			font-size: 27px;
+		}
+	}
+
+	.reviews-item {
+		margin-right:0px;
+		&__wrapper {
+			max-width: 650px;
+		}
+
+		&__name {
+			font-size: 16px;
+		}
+
+		&__achievement {
+			font-size: 12px;
+		}
+
+		&__desc {
+			font-size: 14px;
+			line-height: 24px;
+		}
+	}
+}

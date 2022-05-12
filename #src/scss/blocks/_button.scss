@@ -1,0 +1,13 @@
+@import '../bace/_variables';
+.button {
+	width: 153px;
+    height: 32px;
+	background: #C70101;
+    border-radius: 5px;
+	border:none;
+	color:$main_color;
+	font-weight: 500;
+    font-size: 12px;
+	text-transform: uppercase;
+	
+}
