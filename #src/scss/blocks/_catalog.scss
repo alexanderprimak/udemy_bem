@@ -160,9 +160,13 @@
 			&_button {
 				width: 135px;
 				height: 44px;
+
+				&:hover {
+					cursor: pointer;
+				}
 			}
 		}
 	}
 }
 
-@import "../media/catalog/_catalogMedia"
+@import '../media/catalog/_catalogMedia';
