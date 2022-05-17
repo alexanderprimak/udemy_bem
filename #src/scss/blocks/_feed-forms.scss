@@ -1,25 +1,37 @@
-@import "../bace/_variables";
+@import '../bace/_variables';
 
 .feed-form {
-	display:flex;
-	flex-direction:column;
-	width:303px;
-	margin-top:36px;
+	display: flex;
+	flex-direction: column;
+	width: 303px;
+	margin-top: 36px;
 	&__input {
-		height:54px;
-		border:none;
-		border-radius:5px;
-		margin-bottom:13px;
-		padding:0px 20px;
+		height: 54px;
+		border: none;
+		border-radius: 5px;
+		margin-bottom: 13px;
+		padding: 0px 20px;
+		color: black;
 		&:nth-child(3) {
-			margin-bottom:17px;
+			margin-bottom: 17px;
 		}
 	}
 	&__button {
 		width: 303px;
-        height: 58px;
+		height: 58px;
 		font-size: 16px;
+	}
+
+	.error {
+		border: 1px solid red;
+		margin-bottom: 10px;
+		color: black;
+		font-size: 15px;
+	}
+
+	label.error {
+		border: none;
 	}
 }
 
-@import "../media/feed_forms/_formMedia"
+@import '../media/feed_forms/_formMedia';

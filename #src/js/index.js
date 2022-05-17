@@ -110,3 +110,42 @@ close.forEach(item => {
 		overlayClose()
 	})
 })
+
+/// validates form
+
+function validateForm(form) {
+	$(form).validate({
+		rules: {
+			name: {
+				required: true,
+				minlength: 5,
+				maxlength: 12,
+			},
+			phone: 'required',
+			email: {
+				required: true,
+				email: true,
+			},
+		},
+		messages: {
+			name: {
+				required: 'Вам нужно ввести ваше имя',
+				minlength: jQuery.validator.format(
+					'Ваше имя должно состоять из не менее {0} символов!'
+				),
+				maxlength: jQuery.validator.format(
+					'Ваше имя должно состоять из не более {0} символов!'
+				),
+			},
+			phone: 'Пожалуйста введите свой номер',
+			email: {
+				required: 'Пожалуйста введите свою почту',
+				email: 'Ваша почта не коректна',
+			},
+		},
+	})
+}
+
+validateForm('[data-modal="consultation"] form')
+validateForm("[data-modal='thank'] form ")
+validateForm('#consultation')

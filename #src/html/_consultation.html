@@ -8,11 +8,12 @@
 			Просто заполните форму заявки <br />
 			и мы перезвоним вам в течении 10 минут
 		</div>
-		<form action="#" class="feed-form">
+		<form id="consultation" action="#" class="feed-form">
 			<input
 				placeholder="Ваше имя"
 				class="feed-form__input"
 				required
+				maxlength="12"
 				name="name"
 				type="text"
 			/>
@@ -20,8 +21,9 @@
 				placeholder="Ваш телефон"
 				class="feed-form__input"
 				required
-				name="tel"
+				name="phone"
 				type="number"
+				maxlength="15"
 			/>
 			<input
 				placeholder="Ваш e-mail"
@@ -29,6 +31,7 @@
 				required
 				name="email"
 				type="email"
+				maxlength="22"
 			/>
 			<button class="button feed-form__button">заказать кОНСУЛЬТАЦИЮ</button>
 		</form>
