@@ -1,7 +1,7 @@
 @import '../bace/variables';
 
 .promo {
-	background: url('../../img/promo/bg.png') no-repeat center top/cover;
+	background: url('../img/promo/bg.png') no-repeat center top/cover;
 	min-height: 650px;
 	padding: 21px 0px 93px 0px;
 
@@ -45,7 +45,6 @@
 			font-size: 14px;
 			color: $main_color;
 			max-width: 108px;
-			
 		}
 	}
 	&__button {
@@ -64,4 +63,4 @@
 	}
 }
 
-@import "../media/promo/_promoMedia"
+@import '../media/promo/_promoMedia';

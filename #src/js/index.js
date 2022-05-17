@@ -91,7 +91,7 @@ const getElements = e => {
 	const [content_item] = e.target.parentElement.parentElement.children
 	const [img, sub_title] = content_item.children
 	const [attributeBtn] = e.target.attributes
-	const title = sub_title.innerHTML
+	const title = sub_title ? sub_title.innerHTML : null
 	const value = attributeBtn.value
 
 	return { title, value }
