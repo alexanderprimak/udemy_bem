@@ -2,13 +2,15 @@
 	<div class="container">
 		<div class="catalog_title">Каталог пульсометров</div>
 		<div class="catalog__tabs">
-			<div data="fitness" class="catalog__tab catalog__tab_active">
+			<div data-thing="fitness" class="catalog__tab catalog__tab_active">
 				<div>Для фитнеса</div>
 			</div>
-			<div data="run" class="catalog__tab"><div>для бега</div></div>
-			<div data="triatlon" class="catalog__tab"><div>для триатлона</div></div>
+			<div data-thing="run" class="catalog__tab"><div>для бега</div></div>
+			<div data-thing="triatlon" class="catalog__tab">
+				<div>для триатлона</div>
+			</div>
 		</div>
-		<div data="fitness" class="catalog__content catalog__content_active">
+		<div data-thing="fitness" class="catalog__content catalog__content_active">
 			<div class="content-item">
 				<div class="content-item__wrapper">
 					<img
@@ -264,7 +266,7 @@
 		</div>
 
 		..............................................................
-		<div data="run" class="catalog__content">
+		<div data-thing="run" class="catalog__content">
 			<div class="content-item">
 				<div class="content-item__wrapper">
 					<img
@@ -394,7 +396,7 @@
 		</div>
 
 		..................................................................................
-		<div data="triatlon" class="catalog__content">
+		<div data-thing="triatlon" class="catalog__content">
 			<div class="content-item">
 				<div class="content-item__wrapper">
 					<img

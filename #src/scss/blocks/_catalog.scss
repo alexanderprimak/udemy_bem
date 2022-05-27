@@ -160,9 +160,13 @@
 			&_button {
 				width: 135px;
 				height: 44px;
+				transition-duration: 0.5s;
+				transition-property: background-color, transform;
 
 				&:hover {
 					cursor: pointer;
+					background: rebeccapurple;
+					transform: translateY(-4px);
 				}
 			}
 		}

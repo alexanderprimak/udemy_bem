@@ -50,9 +50,9 @@ tabs.forEach(tab => {
 		removeActiveTab()
 		closeTextInfo()
 		tab.classList.add('catalog__tab_active')
-		const attribute = tab.attributes.data.value
+		const attribute = tab.attributes['data-thing'].value
 		content.forEach(item => {
-			attribute === item.attributes.data.value
+			attribute === item.attributes['data-thing'].value
 				? item.classList.add('catalog__content_active')
 				: item.classList.remove('catalog__content_active')
 		})
@@ -149,3 +149,27 @@ function validateForm(form) {
 validateForm('[data-modal="consultation"] form')
 validateForm("[data-modal='thank'] form ")
 validateForm('#consultation')
+
+// work with form
+
+$('form').submit(function (e) {
+	e.preventDefault()
+
+	if (!$(this).valid()) {
+		return
+	}
+
+	console.log($(this).valid())
+
+	$.ajax({
+		type: 'POST',
+		url: 'php/smart.php',
+		data: $(this).serialize(),
+	}).done(function () {
+		$(this).find('input').val('')
+
+		$('form').trigger('reset')
+	})
+
+	return false
+})
