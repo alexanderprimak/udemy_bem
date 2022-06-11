@@ -159,8 +159,6 @@ $('form').submit(function (e) {
 		return
 	}
 
-	console.log($(this).valid())
-
 	$.ajax({
 		type: 'POST',
 		url: 'php/smart.php',
@@ -171,5 +169,22 @@ $('form').submit(function (e) {
 		$('form').trigger('reset')
 	})
 
+	return false
+})
+
+//work with icon scroll
+
+$(window).scroll(function () {
+	if ($(this).scrollTop() > 1600) {
+		$('.page-up').fadeIn()
+	} else {
+		$('.page-up').fadeOut()
+	}
+})
+
+// Smooth Scroll
+$('a[href^="#"]').on('click', function () {
+	const _href = $(this).attr('href')
+	$('html, body').animate({ scrollTop: $(_href).offset().top + 'px' }, 1000)
 	return false
 })
