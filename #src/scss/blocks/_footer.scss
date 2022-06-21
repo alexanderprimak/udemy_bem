@@ -26,16 +26,21 @@
 		display: block;
 	}
 
-   &__social {
-      margin-top:36px;
-   }
+	&__map {
+		width: 100%;
+		height: 600px;
+	}
 
-   &__social-item {
-      &:hover {
-         cursor:pointer;
-      }
-      & + & {
-         margin-left:27px;
-      }
-   }
+	&__social {
+		margin-top: 36px;
+	}
+
+	&__social-item {
+		&:hover {
+			cursor: pointer;
+		}
+		& + & {
+			margin-left: 27px;
+		}
+	}
 }

@@ -1,4 +1,5 @@
 @import '../bace/variables';
+@import '../bace/_animations';
 
 .advantage {
 	text-align: center;
@@ -14,6 +15,17 @@
 		display:flex;
 		justify-content: space-between;
 		margin-top:60px;
+	}
+	&__heart {
+		animation:heartbeat 1.5s ease infinite;
+		// animation-name:heartbeat;
+		// animation-duration:1.5s;
+		// animation-timing-function: ease;
+		// animation-iteration-count:infinite;
+
+		&:hover {
+			animation-play-state:paused;
+		}
 	}
 	&__item {
 		 max-width:257px;
@@ -35,7 +47,7 @@
 		a {
 			color:#FF0000;
 			font-weight: 300;
-            font-size: 14px;
+         font-size: 14px;
 			text-decoration:underline;
 		}
 	}

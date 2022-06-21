@@ -1,4 +1,5 @@
 @import '../bace/_variables';
+@import '../bace/_animations';
 
 .catalog {
 	padding-bottom: 79px;
@@ -61,6 +62,8 @@
 		row-gap: 15px;
 		&_active {
 			display: flex;
+			animation-name: fadeIn;
+			animation-duration: 2s;
 		}
 		.content-item {
 			&__wrapper-info_disable {
@@ -68,6 +71,7 @@
 			}
 			&__wrapper-info {
 				min-height: 74%;
+
 				ul {
 					display: flex;
 					flex-direction: column;
@@ -87,6 +91,11 @@
 				}
 			}
 
+			&__wrapper,
+			&__wrapper-info {
+				animation-name: fadeIn;
+				animation-duration: 1s;
+			}
 			&__wrapper_disable {
 				display: none;
 			}
@@ -160,9 +169,17 @@
 			&_button {
 				width: 135px;
 				height: 44px;
+				transition-duration: 0.5s;
+				transition-property: background-color, transform;
+
+				&:hover {
+					cursor: pointer;
+					background: rebeccapurple;
+					transform: translateY(-4px);
+				}
 			}
 		}
 	}
 }
 
-@import "../media/catalog/_catalogMedia"
+@import '../media/catalog/_catalogMedia';

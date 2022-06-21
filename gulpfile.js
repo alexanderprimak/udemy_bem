@@ -1,5 +1,5 @@
-let project_folder = 'dist';
-let source_folder = '#src';
+let project_folder = 'dist'
+let source_folder = '#src'
 let path = {
 	build: {
 		html: project_folder + '/',
@@ -7,6 +7,7 @@ let path = {
 		js: project_folder + '/js/',
 		img: project_folder + '/img/',
 		fonts: project_folder + '/fonts/',
+		php: project_folder + '/php/',
 	},
 	src: {
 		html: [source_folder + '/*.html', '!' + source_folder + '/html/_*.html'],
@@ -14,15 +15,17 @@ let path = {
 		js: source_folder + '/js/*.js',
 		img: source_folder + '/img/**/*.{jpg,png,svg,gif,jpeg,ico,webp}',
 		fonts: source_folder + '/fonts/*.ttf',
+		php: source_folder + '/php/*.php',
 	},
 	watch: {
 		html: source_folder + '/**/*.html',
 		css: source_folder + '/scss/**/*.scss',
 		js: source_folder + '/js/**/*.js',
 		img: source_folder + '/img/**/*.{jpg,png,svg,gif,ico,webp}',
+		php: project_folder + '/php/**/*.php',
 	},
 	clean: './' + project_folder + '/',
-};
+}
 
 let { src, dest } = require('gulp'),
 	gulp = require('gulp'),
@@ -39,7 +42,7 @@ let { src, dest } = require('gulp'),
 	imagemin = require('gulp-imagemin'),
 	webp = require('gulp-webp'), // конвертирует наши картинки в webP фармат для браузеров которым это необходимо
 	webp_html = require('gulp-webp-in-html'), /// для работы с html файлами
-	webp_css = require('gulp-webp-css'); /// для работы с css файлами
+	webp_css = require('gulp-webp-css') /// для работы с css файлами
 
 function browserSyncFunc(params) {
 	browserSync.init({
@@ -48,7 +51,7 @@ function browserSyncFunc(params) {
 		},
 		port: 3000,
 		notify: false,
-	});
+	})
 }
 
 function html() {
@@ -56,11 +59,15 @@ function html() {
 		.pipe(fileInclude())
 		.pipe(webp_html())
 		.pipe(dest(path.build.html))
-		.pipe(browserSync.stream());
+		.pipe(browserSync.stream())
 }
 
 function fonts() {
-	return src(path.src.fonts).pipe(dest(path.build.fonts));
+	return src(path.src.fonts).pipe(dest(path.build.fonts))
+}
+
+function php() {
+	return src(path.src.php).pipe(dest(path.build.php).pipe(browserSync.stream()))
 }
 
 function img() {
@@ -81,7 +88,7 @@ function img() {
 			})
 		)
 		.pipe(dest(path.build.img))
-		.pipe(browserSync.stream());
+		.pipe(browserSync.stream())
 }
 
 function css() {
@@ -107,7 +114,7 @@ function css() {
 			})
 		)
 		.pipe(dest(path.build.css))
-		.pipe(browserSync.stream());
+		.pipe(browserSync.stream())
 }
 
 function js() {
@@ -126,28 +133,30 @@ function js() {
 		)
 		.pipe(uglify())
 		.pipe(dest(path.build.js))
-		.pipe(browserSync.stream());
+		.pipe(browserSync.stream())
 }
 
 function watchFiles() {
-	gulp.watch([path.watch.html], html);
-	gulp.watch([path.watch.css], css);
-	gulp.watch([path.watch.js], js);
-	gulp.watch([path.watch.img], img);
+	gulp.watch([path.watch.html], html)
+	gulp.watch([path.watch.css], css)
+	gulp.watch([path.watch.js], js)
+	gulp.watch([path.watch.img], img)
+	gulp.watch([path.watch.php], php)
 }
 
 function clean() {
-	return del(path.clean);
+	return del(path.clean)
 }
 
-let build = gulp.series(clean, gulp.parallel(fonts, js, css, html, img));
-let watch = gulp.parallel(build, watchFiles, browserSyncFunc);
+let build = gulp.series(clean, gulp.parallel(php, fonts, js, css, html, img))
+let watch = gulp.parallel(build, watchFiles, browserSyncFunc)
 
-exports.fonts = fonts;
-exports.img = img;
-exports.js = js;
-exports.css = css;
-exports.html = html;
-exports.build = build;
-exports.watch = watch;
-exports.default = watch;
+exports.php = php
+exports.fonts = fonts
+exports.img = img
+exports.js = js
+exports.css = css
+exports.html = html
+exports.build = build
+exports.watch = watch
+exports.default = watch

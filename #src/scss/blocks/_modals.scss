@@ -1,5 +1,7 @@
+@import '../bace/_animations';
+
 .overlay {
-	background: rgba(0, 0, 0, 0.7);
+	background: rgba(0, 0, 0, 0.9);
 	position: fixed;
 	top: 0;
 	width: 100vw;
@@ -61,8 +63,14 @@
 			width: 371px;
 		}
 	}
-
 	&_active {
 		display: block;
+		animation-name: fadeIn;
+		animation-duration: 1s;
+	}
+
+	&_close {
+		animation-name: fadeOut;
+		animation-duration: 2s;
 	}
 }
